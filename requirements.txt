@@ -1,0 +1,7 @@
+flask
+PyPDF2
+together
+fitz
+frontend
+tools
+flask_cors

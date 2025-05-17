@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/style.css')}}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="headder">
+        <!-- <a href="#" class="icon" >Home</a> -->
+        <a href="" class="icon">Research Paper Analyzer</a>
+        <!-- <a href="" class="icon">Contact Us</a> -->
+    </div>
+
+    <div class="about">
+        <p class="heading">We help with your research papers</p>
+        <!-- <p class="content">AI-Based Research Paper Evaluation System.</p>
+        <p class="content">The traditional peer-review process is time-consuming, subjective, and labor-intensive, making it difficult to assess the increasing volume of research papers. Our AI-powered evaluation system automates this process using Natural Language Processing (NLP) and Machine Learning (ML) to analyze clarity, methodology, citations, and plagiarism in research papers.
+        </p> -->
+    </div>
+      <div class="wave-container">
+  <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#BCCCDC" d="M0,220 C180,160 360,220 540,180 C720,140 900,220 1080,180 C1260,140 1440,180 1440,180 L1440,320 L0,320 Z"></path>
+    <path fill="#9AA6B2" d="M0,220 C180,160 360,220 540,180 C720,140 900,220 1080,180 C1260,140 1440,180 1440,180 L1440,320 L0,320 Z"></path>
+     
+</svg>
+</div>
+
+    <!-- <div class="container">
+        <h2>Upload a Research Paper PDF</h2>
+        <form id="upload-form">
+            <input type="file" id="file-input" accept=".pdf" required>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+     -->
+    <div class="container">
+    <h2>Upload a Research Paper PDF</h2>
+    <form id="upload-form">
+        <input type="file" id="file-input" accept=".pdf"  hidden>
+        <label for="file-input" class="custom-file-upload">Browse</label>
+        <button type="submit">Predict</button>
+    </form>
+     <span id="file-name">No file selected</span>
+</div>
+
+
+    <!-- <div id="result">
+        <span style=" font-size: 20px;">
+            Prediction: ${data.prediction}
+        </span><br>
+        <span style="color: black; font-size: 18px;">
+            Score: ${data.score}% confidence
+        </span>
+    </div> -->
+    
+    <div id="loader" class="loader hide"></div>
+    <div class="output hide" id="output">
+        <div id="output-subset">
+            <div class="contain">
+            <div class="result-item">
+                <div class="name" id="prediction">fjkbnjknf </div>
+                <div class="value" id="pass-fail">nfnkjn</div>
+            </div>
+            <div class="result-item">
+                <div class="name" id="score">fjkbnjknf </div>
+                <div class="value" id="score-marks">nfnkjn</div>
+            </div>
+            <div class="result-item hide">
+                <div class="name" id="plagarism">Plagarism </div>
+                <div class="value" id="plagarism-marks">nfnkjn</div>
+            </div>
+        </div>
+        <div class="summary">
+            <p><b>SUMMARY</b></p>
+            <div id="summaryText">
+               <p id="summary-para"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aperiam fuga voluptates iste accusantium corrupti omnis, eligendi quo beatae? Optio a quasi saepe. Magni sapiente perspiciatis eos animi id laborum accusantium sequi ea temporibus ut. Veniam earum commodi veritatis cupiditate vel, consectetur neque eaque expedita illum repudiandae ducimus quos nisi dolorum laboriosam quo. Mollitia nostrum quo explicabo? Sit enim exercitationem ad ab ratione eos. Necessitatibus corporis error dolorem quasi architecto, voluptatum magni et asperiores rerum temporibus ab magnam debitis neque molestias! Porro ipsam assumenda suscipit non pariatur culpa mollitia delectus, quidem dignissimos sed quaerat deleniti totam temporibus tempora impedit saepe minus odio dicta repudiandae sint tempore. Minima esse aut eum, quod amet quo, velit ad dolores quibusdam quaerat similique magnam, laboriosam ullam assumenda. Incidunt in, saepe aut repudiandae ad vel iste ducimus atque tempora labore quasi. Ipsum recusandae reprehenderit perspiciatis magni culpa? Recusandae quo quidem, quas sunt dolor doloremque perferendis, eum consequatur ab rerum explicabo placeat esse at non id temporibus dignissimos odio ullam eveniet architecto magni, repellendus voluptatum maiores? Eius eos ratione libero repellat voluptatibus architecto sit dolorum unde dicta beatae et laboriosam, explicabo saepe tempora quibusdam id dolor fuga magni voluptatem assumenda est. Nostrum dolorem nam eveniet? Provident.
+                </p>
+            </div>
+        </div>
+
+        <div class="plagarism">
+            <p><b>PLAGIARISM</b></p>
+            <div id="plagarismText">
+               <p id="plagarism-para"> Hello! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas aperiam fuga voluptates iste accusantium corrupti omnis, eligendi quo beatae? Optio a quasi saepe. Magni sapiente perspiciatis eos animi id laborum accusantium sequi ea temporibus ut. Veniam earum commodi veritatis cupiditate vel, consectetur neque eaque expedita illum repudiandae ducimus quos nisi dolorum laboriosam quo. Mollitia nostrum quo explicabo? Sit enim exercitationem ad ab ratione eos. Necessitatibus corporis error dolorem quasi architecto, voluptatum magni et asperiores rerum temporibus ab magnam debitis neque molestias! Porro ipsam assumenda suscipit non pariatur culpa mollitia delectus, quidem dignissimos sed quaerat deleniti totam temporibus tempora impedit saepe minus odio dicta repudiandae sint tempore. Minima esse aut eum, quod amet quo, velit ad dolores quibusdam quaerat similique magnam, laboriosam ullam assumenda. Incidunt in, saepe aut repudiandae ad vel iste ducimus atque tempora labore quasi. Ipsum recusandae reprehenderit perspiciatis magni culpa? Recusandae quo quidem, quas sunt dolor doloremque perferendis, eum consequatur ab rerum explicabo placeat esse at non id temporibus dignissimos odio ullam eveniet architecto magni, repellendus voluptatum maiores? Eius eos ratione libero repellat voluptatibus architecto sit dolorum unde dicta beatae et laboriosam, explicabo saepe tempora quibusdam id dolor fuga magni voluptatem assumenda est. Nostrum dolorem nam eveniet? Provident.
+                </p>
+            </div>
+        </div>
+
+        <div class="pdf-container hide" id="pdf-container">
+            <iframe id="pdf-viewer" width="80%" height="400px"></iframe>
+        </div>
+        </div>
+    </div>
+</div>
+
+   
+<script>
+    const fileInput = document.getElementById("file-input");
+    const fileNameDisplay = document.getElementById("file-name");
+
+    // ✅ File name change handler — runs when user selects file
+    fileInput.addEventListener('change', function () {
+        if (fileInput.files.length > 0) {
+            fileNameDisplay.textContent = fileInput.files[0].name;
+        } else {
+            fileNameDisplay.textContent = "No file selected";
+        }
+    });
+
+    // ✅ Form submission handler
+    document.getElementById("upload-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        if (!fileInput.files.length) {
+            alert("Please select file !!! ");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", fileInput.files[0]);
+
+        const loader = document.getElementById("loader");
+        const output = document.getElementById("output");
+        const pdfContainer = document.getElementById("pdf-container");
+        const pdfViewer = document.getElementById("pdf-viewer");
+
+        loader.classList.remove("hide");
+        output.classList.add("hide");
+        pdfContainer.classList.add("hide");
+
+        fetch("/predict", { method: "POST", body: formData })
+            .then(response => response.json())
+            .then(data => {
+                loader.classList.add("hide");
+                window.location.href = "#output";
+                output.classList.remove("hide");
+
+                document.getElementById("prediction").innerText = "Prediction";
+                document.getElementById("pass-fail").innerText = data.prediction;
+                document.getElementById("pass-fail").style.color = data.prediction === "Accepted" ? "green" : "red";
+                document.getElementById("score").innerText = "Score";
+                document.getElementById("summary-para").innerText = data.summary;
+                document.getElementById("score-marks").innerText = data.score;
+                document.getElementById("plagarism-marks").innerText = data.plagarism;
+                document.getElementById("plagarism-marks").style.color = data.plagarism === "No Plagiarism Found" ? "green" : "red";
+
+                // ✅ Clean and structured plagiarism output
+                let plagiarismOutput = '';
+                data.plagiarism.forEach(item => {
+                    plagiarismOutput += `<p style="background-color: white;"><strong>Sentence:</strong> ${item.sentence}</p>`;
+                    plagiarismOutput += `<p style="background-color: white;"><strong>Similarity:</strong> ${item.similarity}</p>`;
+                    plagiarismOutput += `<p style="background-color: white;"><strong>Matched Abstract:</strong> ${item.matched_abstract}</p>`;
+                    plagiarismOutput += `<hr>`;
+                });
+                document.getElementById("plagarismText").innerHTML = plagiarismOutput;
+
+                const objectURL = URL.createObjectURL(fileInput.files[0]);
+                pdfViewer.src = objectURL;
+                pdfContainer.classList.remove("hide");
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                loader.classList.add("hide");
+            });
+    });
+</script>
+
+</body>
+</html>

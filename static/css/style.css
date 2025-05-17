@@ -1,0 +1,318 @@
+*{
+    color: #577799;
+    font-family: "poppins";
+    background:#9AA6B2; 
+    /* background: linear-gradient(to right,rgba(0,0,0,0),#000 18%); */
+}
+    .custom-file-upload {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        font-size: 16px;
+        border-radius: .5rem;
+        cursor: pointer;
+        margin-right: 10px;
+        width: 30%;
+    }
+    .name{
+        background-color: white;
+    }
+    .value{
+        background-color: white;
+    }
+    #file-name{
+        background-color: white;
+    }
+    #file-input {
+        display: none;
+    }
+
+#output-subset{
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    background-color: white;
+    margin-bottom: 3rem;
+}
+.wave-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background: #787069;
+      overflow: hidden;
+    }
+
+    .wave-container svg {
+      position: absolute;
+      background-color: white;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+
+
+.loader {
+    background: transparent;
+    border: 5px solid transparent;
+    border-top: 5px solid #363636;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+body { 
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.heading{
+    padding: 0;
+    margin: .5rem 0 0 2rem;
+    padding-top: 40px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2.5rem;
+
+}
+
+.content{
+    text-align: center;
+    margin: 0 10rem 0 10rem;
+    padding: 2rem 0 2rem 0;
+}
+
+.headder{
+    font-weight: 480;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+    background-color: #D9EAFD;
+    width: 100%;
+
+}
+.headder a{
+    background: transparent;
+    text-decoration: none;
+}
+.container { 
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem 2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 50%; 
+    
+    margin: 2rem 0 2rem 0;
+    background-color: white;
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2{
+    background-color: white;
+}
+#upload-form{
+    background-color: white;
+}
+input, button { 
+    margin-top: 10px; 
+    padding: 10px; 
+}
+button { 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px;
+    border-radius: .5rem;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+#result {
+    visibility: hidden; 
+    height: auto;
+    width: 80%;
+    margin-top: 20px; 
+    font-size: 1.2em; 
+    font-weight: bold; 
+    padding: 10px; 
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.about{
+    background-color: white;
+}
+
+.contain{
+    background-color: white;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+
+
+.output{
+    /* visibility: hidden; */
+    background: #9AA6B2;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#file-input{
+    border: none;
+    background: transparent;
+    margin: 1rem 0 1rem 0;
+    background-color: #363636;
+    border-radius: 1rem;
+    padding : 1rem 1rem 1rem 1rem;
+    color: #1b0623;
+    font-size: 1rem;
+}
+
+.result-item{
+
+    height: auto;
+    width : 200px;
+    margin: 0 2rem 2rem 2rem;
+    font-size: 1.5rem;
+    background:#ffffff;
+
+    border-radius: 4rem;
+    border: 1rem solid #ffffff;
+}
+
+.heading{
+    background-color: white;
+}
+
+.summary{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    background-color: white;
+    background: white;
+    
+}
+
+.summary p{
+    background: white;
+    padding: 0  2rem 0 2rem;
+
+
+}
+
+.summaryText{
+   
+    height: auto;
+    width: 70%;
+    background-color: #ffffff;
+    border: white 2rem;
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+    margin: 1rem;
+    background: white;
+    
+}
+
+#summaryText{
+    background-color: white;
+}
+
+.plagarism p{
+    background-color: white;
+}
+#plagarismText{
+    background-color: white;
+}
+#plagarism-para{
+    background-color: white;
+}
+p{
+    background-color: white;
+}
+.plagarism {
+    background-color: white;
+}
+#plagarismText{
+    background-color: white;
+}
+#plagarism-para{
+    background-color: white;
+}
+
+strong{
+    background-color: white;
+}
+
+.pdf-container {
+    margin: none;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 1rem;
+    width: 50%;
+    padding-bottom: 2rem;
+    background-color: white;
+}
+
+#pdf-viewer{
+
+    margin: none;
+
+}
+
+.hide {
+    display: none;
+}
+
+
+.summary-pdf{
+    display: flex;
+    width: 80%;
+}
